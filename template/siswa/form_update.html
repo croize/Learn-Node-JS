@@ -1,0 +1,24 @@
+{% extends '../layout/app.html' %}
+
+{% block title %} UPDATE SISWA {% endblock %}
+
+{% block content %}
+<h2>Update</h2>
+<form method="POST">
+    <label>Nisn : </label>
+    <input type="text" name="" value="{{data.nisn}}" disabled>
+    <input type="hidden" value="{{ data.nisn }}" name="nisn">
+    <label>Kelas : </label>
+    <input type="text" name="kelas" placeholder="Kelas" value="{{ data.kelas }}"><br>
+    <label>Tempat Tanggal Lahir : </label>
+    <input type="text" name="ttl" placeholder="Tempat Tanggal Lahir" value="{{ data.ttl }}"><br>
+    <label>Alamat : </label>
+    <input type="text" name="alamat" placeholder="Alamat" value="{{ data.alamat }}"><br>
+    <label>Jenis Kelamin : </label>
+    <select class="" name="kelamin">
+      <option value="L" {% if data.kelamin == "L" %} selected {% endif %}>Laki-Laki</option>
+      <option value="P" {% if data.kelamin == "P" %} selected {% endif %}>Perempuan</option>
+    </select>
+    <input type="submit" value="submit">
+</form>
+{% endblock %}

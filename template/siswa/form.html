@@ -1,0 +1,25 @@
+{% extends '../layout/app.html' %}
+
+{% block title %} FORM SISWA {% endblock %}
+
+{% block content %}
+<h2>Form Siswa</h2>
+    <form method="POST">
+      <label>NISN : </label>
+      <input type="text" name="nisn" placeholder="NISN"><br>
+      <label>Nama : </label>
+      <input type="text" name="nama" placeholder="Nama"><br>
+      <label>Kelas : </label>
+      <input type="text" name="kelas" placeholder="Kelas"><br>
+      <label>Alamat : </label>
+      <input type="text" name="alamat" placeholder="Alamat"><br>
+      <label>Tempat Tanggal Lahir : </label>
+      <input type="text" name="ttl" placeholder="Tempat Tanggal Lahir"><br>
+      <label>Jenis Kelamin : </label>
+      <select class="" name="kelamin">
+        <option value="L">Laki-Laki</option>
+        <option value="P">Perempuan</option>
+      </select><br>
+      <input type="submit" value="submit">
+    </form>
+{% endblock %}

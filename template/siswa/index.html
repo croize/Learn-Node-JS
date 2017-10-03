@@ -1,0 +1,35 @@
+{% extends '../layout/app.html' %}
+
+{% block title %} SISWA {% endblock %}
+
+{% block content %}
+<h2>DATA BUKU</h2>
+<table border="1">
+<tr>
+    <td>NISN</td>
+    <td>Nama</td>
+    <td>Tempat Tanggal Lahir</td>
+    <td>Kelas</td>
+    <td>Alamat</td>
+    <td>Jenis Kelamin</td>
+    <td>Aksi</td>
+</tr>
+
+{% for d in data %}
+<tr>
+    <td>{{ d.nisn }}</td>
+    <td>{{ d.nama }}</td>
+    <td>{{ d.ttl }}</td>
+    <td>{{ d.kelas }}</td>
+    <td>{{ d.alamat }}</td>
+    <td>{% if d.kelamin == "L" %}Laki-Laki{% else %}Perempuan{% endif %}</td>
+    <td>
+        <a href="siswa/update/{{ d.nisn }}">EDIT</a>
+        <a href="siswa/delete/{{ d.nisn }}" onclick="return confirm('Anda yakin?')">DELETE</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/siswa/create">Tambah data</a>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends '../layout/app.html' %}
+
+{% block title %} BUKU {% endblock %}
+
+{% block content %}
+    <h2>DATA BUKU</h2>
+<table border="1">
+    <tr>
+        <td>Judul</td>
+        <td>Pengarang</td>
+        <td>Penerbit</td>
+        <td>Action</td>
+    </tr>
+
+    {% for d in data %}
+    <tr>
+        <td>{{ d.judul }}</td>
+        <td>{{ d.pengarang }}</td>
+        <td>{{ d.penerbit }}</td>
+        <td>
+            <a href="buku/update/{{ d.id }}">EDIT</a>
+            <a href="buku/delete/{{ d.id }}" onclick="return confirm('Anda yakin?')">DELETE</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/buku/create">Tambah data</a>
+
+{% endblock %}

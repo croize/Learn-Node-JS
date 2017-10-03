@@ -1,0 +1,17 @@
+{% extends '../layout/app.html' %}
+
+{% block title %} UPDATE BUKU {% endblock %}
+
+{% block content %}
+<h2>Update</h2>
+<form method="POST">
+    <label>Judul : </label>
+    <input type="hidden" value="{{ data.id }}" name="id">
+    <input type="text" name="judul" placeholder="Judul Buku" value="{{ data.judul }}"><br>
+    <label>Pengarang : </label>
+    <input type="text" name="pengarang" placeholder="Pengarang" value="{{ data.pengarang }}"><br>
+    <label>Penerbit : </label>
+    <input type="text" name="penerbit" placeholder="Penerbit" value="{{ data.penerbit }}"><br>
+    <input type="submit" value="submit">
+</form>
+{% endblock %}
